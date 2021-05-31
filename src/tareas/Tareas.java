@@ -71,7 +71,8 @@ public class Tareas {
                     rs = st.executeQuery("SELECT * FROM tarea");
                 while(rs.next())
                     {
-                       System.out.println(rs.getInt("idTarea") + " " + rs.getString("Nombre") + " " + rs.getString("Descripcion") + " " + rs.getInt("Estado"));
+                        String estado = rs.getInt("Estado") == 1 ? "Activo" : "No Activo";
+                       System.out.println(rs.getInt("idTarea") + " " + rs.getString("Nombre") + " " + rs.getString("Descripcion") + " " + estado);
                     }
                     
                 }         
